@@ -1,0 +1,183 @@
+/* Set style for entire application */
+.App {
+  font: 14px 'Century Gothic', Futura, sans-serif;
+  background-color: floralwhite;
+  box-sizing: border-box;
+}
+
+/* Navbar styling */
+.nav-item {
+  position: relative;
+}
+
+.nav-item::after {
+  background-color: darkblue;
+  content: '';
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  transition: width 0.35s ease 0s;
+  position: absolute;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Header component CSS styling */
+#header-pic {
+  display: block;
+  margin: auto;
+  max-width: 70%;
+}
+
+#info {
+  background-color: #141c3a;
+  color: whitesmoke;
+  padding: 4rem 2rem 8rem 2rem;
+}
+
+/* Home Component CSS Styling */
+html {
+  scroll-snap-type: y proximity;
+}
+
+.home-div {
+  scroll-snap-align: center;
+}
+
+.feature-img {
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.feature-img:hover {
+  opacity: 0.7;
+}
+
+/* For smaller screen size */
+@media (max-width: 1261.98px) {
+  .feature-img {
+    height: auto;
+    margin: 2rem auto;
+    max-width: 100%;
+    display: block;
+  }
+  .feature-img:hover {
+    opacity: 0.2;
+  }
+  .media-body {
+    position: absolute;
+    width: 90%;
+    margin: 0;
+    padding: auto 10rem;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: 0.5s ease;
+    opacity: 0;
+    color: #141c3a;
+  }
+
+  .home-div {
+    position: relative;
+  }
+
+  .home-div:hover .media-body {
+    opacity: 1;
+  }
+}
+
+/* For screen size from 1262px */
+@media (min-width: 1262px) {
+  .feature-img {
+    height: auto;
+    width: auto;
+  }
+  .media-body {
+    text-align: center;
+    padding: 11rem 2rem;
+  }
+}
+
+/* For screen size from 1400px */
+@media (min-width: 1400px) {
+  .media-body {
+    text-align: center;
+    padding: 11rem 6rem;
+  }
+}
+
+/* Tic-Tac Component CSS styling */
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.square {
+  background: #fff;
+  border: 5px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 50px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 50px;
+}
+
+/* Search-Bar Styling for Recipe and Weather Component */
+.search-form {
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #141c3a;
+}
+
+.search-bar {
+  width: 50%;
+  border: none;
+  padding: 10px;
+}
+
+.search-button {
+  background: lightgray;
+  border: none;
+  padding: 10px 20px;
+  color: black;
+}
+
+#recipe-img {
+  max-width: 250px;
+}
+
+/* Footer Component CSS Styling */
+#contact {
+  padding: 5rem 0;
+  background-color: #141c3a;
+  color: whitesmoke;
+  border-radius: 15px;
+  margin: 5rem 0.5rem -9rem 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+#footer {
+  margin: 3rem auto 0;
+  background-color: gray;
+  padding: 10rem 2rem 3rem 2rem;
+  color: black;
+}
+
+.tic-tac-body {
+  min-height: 50vh;
+}
