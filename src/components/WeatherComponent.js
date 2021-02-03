@@ -7,13 +7,13 @@ import {
   CardTitle,
   CardText,
 } from 'reactstrap';
-import keys from '../keys.js';
+import keys from '../keys';
 
 const api = {
-  key: keys.API_KEY,
-  base: keys.BASE_URL,
+  key: keys.WEATHER_API_KEY,
+  base: keys.WEATHER_BASE_URL,
 };
-
+console.log(api);
 const WeatherApp = () => {
   const dateBuild = (d) => {
     let date = String(new window.Date());
@@ -28,7 +28,7 @@ const WeatherApp = () => {
   useEffect(() => {
     const getWeather = async () => {
       const response = await fetch(
-        `${api.base}weather?q=${query}&units=metric&appid=${api.key}`,
+        `${api.base}/weather?q=${query}&units=metric&appid=${api.key}`
       );
       const data = await response.json();
       console.log(data);
@@ -95,9 +95,7 @@ const WeatherApp = () => {
                 <CardBody>
                   <CardText>{cuaca.weather[0].main}</CardText>
                   <CardText>Temperature: {cuaca.main.temp}</CardText>
-                  <CardText>
-                    Feels Like: {cuaca.main.feels_like}
-                  </CardText>
+                  <CardText>Feels Like: {cuaca.main.feels_like}</CardText>
                   <CardText>Wind: {cuaca.wind.speed}</CardText>
                 </CardBody>
               </Card>
